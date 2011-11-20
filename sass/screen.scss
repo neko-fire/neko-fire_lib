@@ -1,0 +1,30 @@
+@import "compass/reset";
+@import "compass/css3";
+
+@import "vars";
+
+body {
+	font-family: $sans;
+	font-size: 16px;
+	line-height: 1.35;
+	color: #C6C6C6;
+	background: $bgc;
+}
+
+h1 {
+	font-size: $neko;
+	font-family: $serif;
+}
+
+
+
+#container {
+	width: $stage;
+	margin: 0 auto;
+	> header, > footer , > #main {
+		margin: 0 auto $neko;
+		padding: $neko / 2;
+		@include border-radius(6px, 6px);
+		background: $bgc * 0.6;
+	}
+}

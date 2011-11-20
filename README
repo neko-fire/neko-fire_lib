@@ -1,0 +1,25 @@
+/***************************************
+
+* Neko-Fire Library
+*
+* requires: jQuery 1.6+
+* @author: Martin Bayer
+* neko-fire.com
+*
+*
+* planned features:
+* + cookie based theme engine for css
+* + customizable gallery in a lightbox
+
+	
+	
+****************************************
+@author Martin Bayer
+www.neko-fire.com
+****************************************
+
+Changelog:
+****************************************
+
+v0.01
+	* dev release

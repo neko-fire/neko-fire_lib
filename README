@@ -5,14 +5,8 @@
 * requires: jQuery 1.6+
 * @author: Martin Bayer
 * neko-fire.com
-*
-*
-* planned features:
-* + cookie based theme engine for css
-* + customizable gallery in a lightbox
 
-	
-	
+
 ****************************************
 @author Martin Bayer
 www.neko-fire.com
@@ -23,3 +17,12 @@ Changelog:
 
 v0.01
 	* dev release
+v0.02
+    * added modular JS structure
+    * URL methods
+
+
+Upcomings:
+****************************************
+* require.js integration
+* various utility methods for JS

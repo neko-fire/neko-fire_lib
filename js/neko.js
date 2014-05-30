@@ -6,13 +6,11 @@
 * neko-fire.com
 */
 
-
 /**
  * Top Level Namespace
  * @type {NEKO|*|{}}
  */
 var NEKO = window.NEKO || {};
-
 
 /**
  * GLOBAL function to extend Namespace
@@ -69,3 +67,63 @@ NEKO.utilities.URL = (function(){
 
 })();
 
+
+/**
+ * Cookie Utility Methods
+ * Containing helper to .read(), .create() and .del() cookies.
+ */
+extendNamespace(NEKO,'utilities.cookies');
+NEKO.utilities.cookie = (function () {
+    'use strict';
+
+    /**
+     * Read value of a cookie
+     * @param {String} name of cookie property to read
+     */
+    function read(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) === ' ') {
+                c = c.substring(1, c.length);
+            }
+            if (c.indexOf(nameEQ) === 0) {
+                return c.substring(nameEQ.length, c.length);
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Create Cookie
+     * @param name Name of cookie
+     * @param value Value of cookie
+     * @param days time in d to expiration of cookie
+     */
+    function create(name, value, days) {
+        var expires = '';
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toGMTString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    /**
+     * delete a cookie by name
+     * @param {String} name of cookie delete
+     */
+
+    function del(name) {
+        create(name, "", -1);
+    }
+
+	// Api
+    return {
+        read: read,
+        create: create,
+        del: del
+    };
+})();
